@@ -17,7 +17,9 @@ site/
   assets/style.css
   img/                  imagens exibidas (JPG)
   dl/                   originais para download (PNG) — o build gera um .zip por pasta
-netlify/functions/revisao.mjs   API de status/anotações (Netlify Blobs, store "revisao")
+api/revisao.js          API de status/anotações na Vercel (Upstash Redis, hash "revisao")
+netlify/functions/revisao.mjs   a mesma API no Netlify (Netlify Blobs, store "revisao")
+vercel.json             configuração da Vercel (build, pasta dist, barra final nas URLs)
 build-site.py           gera dist/ a partir de site/
 publicar.sh             build + deploy em produção
 ```
@@ -26,7 +28,20 @@ publicar.sh             build + deploy em produção
 1. Imagens para a tela em `site/img/conteudos/<pasta>/` (JPG) e originais em `site/dl/<pasta>/` (PNG, mesmos nomes).
 2. Registre a peça em `site/assets/conteudos.js` com `piece("<pasta>", "Título", [arquivos])`.
 
-## Rodar e publicar
+## Deploy na Vercel
+1. **Add New → Project** → importar `lucasfigueiredoart/clube5-`. O `vercel.json` já define tudo:
+   instala com `npm install`, builda com `python3 build-site.py` e publica a pasta `dist`.
+   Framework Preset: **Other** (não precisa mudar nada nas configurações de build).
+2. **Storage → Create / Connect → Upstash for Redis** (plano grátis) e conectar ao projeto.
+   Isso cria as variáveis `KV_REST_API_URL` e `KV_REST_API_TOKEN` usadas por `api/revisao.js`.
+3. **Redeploy** depois de conectar o banco (as variáveis só entram em deploys novos).
+4. Conferir: `https://<domínio>/api/revisao` deve responder `{}`.
+   Se responder erro 503, o banco ainda não está conectado.
+
+> `trailingSlash: true` é necessário: as páginas usam caminhos relativos (`../assets/...`),
+> então `/conteudos` precisa virar `/conteudos/`.
+
+## Rodar e publicar (Netlify / local)
 ```bash
 npm install                 # @netlify/blobs (usado pela function)
 python3 build-site.py       # gera dist/  (requer node para ler o catálogo)
