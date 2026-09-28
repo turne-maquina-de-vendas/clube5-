@@ -17,7 +17,7 @@ site/
   assets/style.css
   img/                  imagens exibidas (JPG)
   dl/                   originais para download (PNG) — o build gera um .zip por pasta
-api/revisao.js          API de status/anotações na Vercel (Upstash Redis, hash "revisao")
+api/revisao.js          API de status/anotações na Vercel (Postgres/Neon, tabela "revisao")
 netlify/functions/revisao.mjs   a mesma API no Netlify (Netlify Blobs, store "revisao")
 vercel.json             configuração da Vercel (build, pasta dist, barra final nas URLs)
 build-site.py           gera dist/ a partir de site/
@@ -32,8 +32,9 @@ publicar.sh             build + deploy em produção
 1. **Add New → Project** → importar `lucasfigueiredoart/clube5-`. O `vercel.json` já define tudo:
    instala com `npm install`, builda com `python3 build-site.py` e publica a pasta `dist`.
    Framework Preset: **Other** (não precisa mudar nada nas configurações de build).
-2. **Storage → Create / Connect → Upstash for Redis** (plano grátis) e conectar ao projeto.
-   Isso cria as variáveis `KV_REST_API_URL` e `KV_REST_API_TOKEN` usadas por `api/revisao.js`.
+2. **Storage → Neon (Postgres)** conectado ao projeto. A Vercel cria `DATABASE_URL`/`POSTGRES_URL`,
+   que `api/revisao.js` usa; a tabela `revisao` é criada sozinha na primeira chamada.
+   **Nunca** coloque a URL do banco no código — o repositório é público.
 3. **Redeploy** depois de conectar o banco (as variáveis só entram em deploys novos).
 4. Conferir: `https://<domínio>/api/revisao` deve responder `{}`.
    Se responder erro 503, o banco ainda não está conectado.
