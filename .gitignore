@@ -1,0 +1,8 @@
+# Local Netlify folder
+.netlify
+node_modules/
+dist/
+.DS_Store
+__pycache__/
+img/
+acervo-jacob-petry.html
