@@ -6,7 +6,23 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "headers": [
-    { "source": "/api/(.*)", "headers": [{ "key": "cache-control", "value": "no-store" }] },
-    { "source": "/dl/(.*)", "headers": [{ "key": "content-disposition", "value": "attachment" }] }
+    {
+      "source": "/api/revisao(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/dl/(.*)",
+      "headers": [
+        {
+          "key": "content-disposition",
+          "value": "attachment"
+        }
+      ]
+    }
   ]
 }

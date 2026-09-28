@@ -100,7 +100,9 @@ open(os.path.join(OUT,"id-visual","index.html"),"w",encoding="utf-8").write(
 # Conteúdos: painel de carrosséis, estáticos e capas de reels (dados em assets/conteudos.js)
 os.makedirs(os.path.join(OUT,"conteudos"), exist_ok=True)
 open(os.path.join(OUT,"conteudos","index.html"),"w",encoding="utf-8").write(
-    page("../", None, "Conteúdos · Clube dos 5%", "page-conteudos", HOME, "", '<main id="conteudos"></main>', ("conteudos.js",), foot=""))
+    page("../", None, "Conteúdos · Clube dos 5%", "page-conteudos", HOME, "",
+         '<div class="ct-layout">\n<main id="conteudos"></main>\n<aside class="ig" id="ig" aria-label="Instagram @oclubedos5porcento"></aside>\n</div>',
+         ("conteudos.js","instagram.js"), foot=""))
 for pid, slug, name in items:
     os.makedirs(os.path.join(OUT,slug), exist_ok=True)
     open(os.path.join(OUT,slug,"index.html"),"w",encoding="utf-8").write(

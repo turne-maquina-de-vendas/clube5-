@@ -19,6 +19,7 @@ site/
   dl/                   originais para download (PNG) — o build gera um .zip por pasta
 api/revisao.js          API de status/anotações na Vercel (Postgres/Neon, tabela "revisao")
 netlify/functions/revisao.mjs   a mesma API no Netlify (Netlify Blobs, store "revisao")
+api/instagram.js        grade do Instagram na lateral de Conteúdos (últimos 9 posts)
 vercel.json             configuração da Vercel (build, pasta dist, barra final nas URLs)
 build-site.py           gera dist/ a partir de site/
 publicar.sh             build + deploy em produção
@@ -41,6 +42,20 @@ publicar.sh             build + deploy em produção
 
 > `trailingSlash: true` é necessário: as páginas usam caminhos relativos (`../assets/...`),
 > então `/conteudos` precisa virar `/conteudos/`.
+
+## Grade do Instagram (lateral de Conteúdos)
+Mostra perfil + últimos 9 posts de @oclubedos5porcento, atualizando a cada ~2 min (cache de 2 min na CDN).
+Usa a API oficial; precisa de um token da conta:
+1. A conta @oclubedos5porcento precisa ser **profissional** (Criador ou Empresa).
+2. [developers.facebook.com](https://developers.facebook.com/apps) → **Criar app** (tipo Empresa) →
+   adicionar o produto **Instagram** → **Configuração da API com login do Instagram**.
+3. Em **Gerar tokens de acesso**, adicionar a conta @oclubedos5porcento e gerar o token
+   (permissão `instagram_business_basic`).
+4. Na Vercel: **Settings → Environment Variables** → `IG_ACCESS_TOKEN` = token → **Redeploy**.
+5. Conferir: `https://<domínio>/api/instagram` deve listar os posts.
+
+O token vale 60 dias; `api/instagram.js` renova sozinho a cada 7 dias e guarda o novo no Neon
+(tabela `ig_token`). Se trocar `IG_ACCESS_TOKEN`, o novo substitui o guardado.
 
 ## Rodar e publicar (Netlify / local)
 ```bash
