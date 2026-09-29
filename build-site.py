@@ -14,6 +14,9 @@ probed = json.loads(subprocess.run(["node","-e",probe],capture_output=True,text=
 items, rows = probed["items"], probed["rows"]
 assert len({s for _,s,_ in items}) == len(items), "slugs repetidos"
 
+# versão dos assets (hash do conteúdo): força o navegador a baixar CSS/JS novos a cada publicação
+import hashlib
+VER = hashlib.sha1(b"".join(open(os.path.join(SITE,"assets",f),"rb").read() for f in sorted(os.listdir(os.path.join(SITE,"assets"))))).hexdigest()[:8]
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">'
 SYMBOLS = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="kebab" viewBox="0 0 4 18"><circle cx="2" cy="2" r="1.7"/><circle cx="2" cy="9" r="1.7"/><circle cx="2" cy="16" r="1.7"/></symbol></svg>'
 def header(base, left):
@@ -34,7 +37,7 @@ def header(base, left):
 FOOT = "<footer>Clube dos 5% · Jacob Petry — “Acessar” abre a trilha na Hotmart Club (login de membro); “Materiais” abre a pasta no Drive.</footer>"
 def page(base, product, title, body_class, left, search, main, scripts=(), foot=FOOT):
     prod = f' data-product="{product}"' if product else ""
-    js = "\n".join(f'<script src="{base}assets/{x}"></script>' for x in scripts)
+    js = "\n".join(f'<script src="{base}assets/{x}?v={VER}"></script>' for x in scripts)
     return f'''<!doctype html>
 <html lang="pt-BR" data-base="{base}"{prod}>
 <head>
@@ -43,7 +46,7 @@ def page(base, product, title, body_class, left, search, main, scripts=(), foot=
 <title>{html.escape(title)}</title>
 <meta name="description" content="Clube dos 5% · Jacob Petry — design e materiais dos produtos.">
 {FONTS}
-<link rel="stylesheet" href="{base}assets/style.css">
+<link rel="stylesheet" href="{base}assets/style.css?v={VER}">
 <link rel="icon" type="image/png" href="{base}favicon.png">
 <link rel="icon" href="{base}favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="{base}apple-touch-icon.png">
