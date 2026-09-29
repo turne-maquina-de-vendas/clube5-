@@ -9,7 +9,8 @@ const nums = n => Array.from({length:n}, (_,i)=>String(i+1));
 const FORMATS = [
   {id:"carrosseis", title:"Carrosséis", one:"Carrossel", ratio:"4 / 5", size:"1080 × 1350", items:[
     piece("carrossel-falso-eu", "Como o falso eu é construído?", nums(9)),
-    piece("carrossel-banho", "Você já entrou no banho e não lembrava do shampoo?", nums(9))]},
+    piece("carrossel-banho", "Você já entrou no banho e não lembrava do shampoo?", nums(9)),
+    piece("carrossel-leao", "Um filhote de leão se perdeu do bando", nums(11))]},
   {id:"estaticos", title:"Estáticos", one:"Estático", ratio:"4 / 5", size:"1080 × 1350", items:[]},
   {id:"reels", title:"Capas de reels", one:"Capa de reels", ratio:"9 / 16", size:"1080 × 1920", zip:"dl/reels.zip", items:[
     ["a","É assim que surge a voz na cabeça"],["b","O que é o Clube dos 5%?"],["c","Esse é o ciclo do falso eu"],
