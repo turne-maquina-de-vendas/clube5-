@@ -534,15 +534,15 @@ a.door:hover .door-cta svg{transform:translateX(4px)}
 .ct-grid.reels .rv-btns{grid-template-columns:repeat(2,minmax(0,1fr))}
 
 /* ---------- Conteúdos: lateral com a grade do Instagram ---------- */
-.ct-layout{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,24vw,380px);align-items:start}
+.ct-layout{display:grid;grid-template-columns:minmax(0,1fr) clamp(400px,40vw,680px);align-items:start}
 .ct-layout > main{min-width:0}
-.ig{position:sticky;top:96px;padding:clamp(24px,4vw,56px) var(--gutter) 40px 0}
-.ig-card{border:1px solid rgba(238,232,221,.1);border-radius:10px;background:var(--stone);padding:16px;display:flex;flex-direction:column;gap:12px}
-.ig-head{display:flex;align-items:center;gap:12px}
-.ig-pic{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--stone-2);flex:none;box-shadow:0 0 0 2px var(--stone),0 0 0 3.5px var(--gold)}
-.ig-user{font-weight:600;text-decoration:none;font-size:14.5px}
+.ig{position:static;padding:clamp(24px,4vw,56px) var(--gutter) 40px 0}
+.ig-card{border:1px solid rgba(238,232,221,.1);border-radius:12px;background:var(--stone);padding:clamp(18px,1.6vw,28px);display:flex;flex-direction:column;gap:16px}
+.ig-head{display:flex;align-items:center;gap:clamp(14px,1.4vw,24px)}
+.ig-pic{width:clamp(64px,5.6vw,96px);height:clamp(64px,5.6vw,96px);border-radius:50%;object-fit:cover;background:var(--stone-2);flex:none;box-shadow:0 0 0 2px var(--stone),0 0 0 3.5px var(--gold)}
+.ig-user{font-weight:600;text-decoration:none;font-size:clamp(16px,1.3vw,21px)}
 .ig-user:hover{color:var(--gold-hi)}
-.ig-head small{display:block;color:var(--muted);font-size:12px}
+.ig-head small{display:block;color:var(--bone-dim);font-size:clamp(13px,1vw,15px);margin-top:2px}
 .ig-live{margin:0;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .ig-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border-radius:4px;overflow:hidden}
 .ig-grid a{position:relative;aspect-ratio:3/4;background:var(--stone-2);display:block;overflow:hidden}
@@ -550,7 +550,8 @@ a.door:hover .door-cta svg{transform:translateX(4px)}
 .ig-grid a:hover img{opacity:.8}
 .ig-open{align-self:center;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold-hi);text-decoration:none}
 .ig-open:hover{color:var(--bone)}
-@media (max-width:1000px){
+@media (max-width:1100px){
   .ct-layout{grid-template-columns:1fr}
-  .ig{position:static;padding:0 var(--gutter) 48px;max-width:460px}
+  .ig{position:static;padding:0 var(--gutter) 48px;max-width:640px}
 }
+@media (min-width:1101px) and (min-height:1150px){.ig{position:sticky;top:90px}}
