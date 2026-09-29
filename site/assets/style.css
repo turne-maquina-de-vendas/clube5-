@@ -462,16 +462,17 @@ a.door:hover .door-cta svg{transform:translateX(4px)}
 @media (max-width:820px){.doors{grid-template-columns:1fr;min-height:0}.door{min-height:240px}}
 
 /* ---------- Conteúdos ---------- */
-.page-conteudos main{padding:clamp(18px,2.4vw,36px) var(--gutter) 56px}
-.ct-head h1{font-size:clamp(32px,3.4vw,54px)}
+.page-conteudos main{display:block;padding:clamp(14px,1.8vw,26px) var(--gutter) 56px}
+.ct-head .eyebrow{font-size:10px}
+.ct-head h1{font-size:clamp(26px,2.4vw,38px);margin-top:4px}
 .ct-head{display:flex;flex-direction:column;gap:4px;margin-bottom:4px}
-.ct-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.ct-tabs button{padding:7px 14px;border-radius:999px;border:1px solid rgba(238,232,221,.2);font-size:13px;color:var(--bone-dim)}
+.ct-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ct-tabs button{padding:5px 12px;font-size:12.5px!important;border-radius:999px;border:1px solid rgba(238,232,221,.2);font-size:13px;color:var(--bone-dim)}
 .ct-tabs button em{font-style:normal;color:var(--muted);margin-left:4px}
 .ct-tabs button:hover{border-color:var(--bone);color:var(--bone)}
 .ct-tabs button[aria-selected="true"]{background:var(--bone);border-color:var(--bone);color:var(--ink)}
 .ct-tabs button[aria-selected="true"] em{color:var(--stone-2)}
-.ct-sec{margin-top:clamp(20px,2.4vw,32px)}
+.ct-sec{margin-top:clamp(18px,2vw,26px)}
 .ct-sec h2{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 0;font-size:clamp(16px,1.2vw,19px);font-weight:500;margin:0 0 12px}
 .ct-sec h2 em{font-style:normal;font-weight:400;font-size:12px;color:var(--muted);margin-left:6px}
 /* cards com tamanho máximo: nunca esticam em telas grandes; 2 por linha no celular */
@@ -513,7 +514,8 @@ a.door:hover .door-cta svg{transform:translateX(4px)}
 .rv-chip.ajuste{color:#e3b55c;border-color:rgba(227,181,92,.45)}
 .rv-chip.reprovado{color:#e0786b;border-color:rgba(224,120,107,.45)}
 .rv-chip.publicado{color:#7aa7ef;border-color:rgba(122,167,239,.5)}
-.rv-sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.rv-sum{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.rv-sum .rv-chip{font-size:9.5px;padding:2px 8px}
 .rv-sum:empty{display:none}
 .rv-btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
 .rv-btns button{padding:6px 4px;border-radius:7px;border:1px solid rgba(238,232,221,.16);background:rgba(238,232,221,.04);font-size:12.5px;color:var(--bone-dim)}
