@@ -281,6 +281,11 @@
 .t-italic::before{content:"";display:inline-block;width:0}
 .t-hand{font-family:"Caveat Brush","Brush Script MT",cursive;font-size:clamp(34px,3vw,46px);text-transform:uppercase;letter-spacing:.04em;color:var(--acc,#1B1917)}
 .t-brush{font-family:"Caveat Brush","Brush Script MT",cursive;font-size:clamp(34px,3vw,46px);color:#CF9852;transform:rotate(-4deg)}
+.t-cor-sb{font-family:var(--display);font-weight:600;font-size:clamp(28px,2.4vw,38px);letter-spacing:.02em}
+.t-cor-mi{font-family:var(--display);font-weight:500;font-style:italic;font-size:clamp(34px,3vw,46px);color:#CF9852;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.t-sf-md,.t-sf-bd{font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:clamp(22px,1.9vw,28px);letter-spacing:-.01em}
+.t-sf-md{font-weight:500}
+.t-sf-bd{font-weight:700}
 .mx-logos{display:grid;grid-template-columns:1fr 1fr 2fr;gap:12px}
 .mx-logo:not(.wide){grid-row:span 2}
 .mx-logo{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:12px;padding:clamp(20px,3vw,40px);min-height:260px}

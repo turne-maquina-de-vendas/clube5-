@@ -403,10 +403,13 @@ P.unshift({id:"clube", plain:"Clube dos 5%", type:"Comunidade · Produto princip
       {n:"Couro", h:"#48423B", u:"Encadernação e texturas nobres", dark:true},
       {n:"Pergaminho", h:"#F2ECE0", u:"Fundos claros de stories"},
       {n:"Branco", h:"#FFFFFF", u:"Wordmark sobre fundo escuro"}],
+    typeTitle:["Duas famílias,","quatro pesos"],
     type:[
-      {role:"Wordmark", sample:"CLUBE DOS 5%", cls:"t-word", note:"Serifa clássica de alto contraste, sempre em caixa-alta."},
-      {role:"Títulos de semana", sample:"Semana da Aceitação", cls:"t-italic", note:"Serifa itálica dentro de uma pílula com brilho dourado, nos stories."},
-      {role:"Frases de impacto", sample:"Não se distraia!", cls:"t-brush", note:"Lettering de pincel em ouro, como no caderno do Clube."}],
+      {role:"Títulos · Cormorant SemiBold", sample:"COMO O FALSO EU", cls:"t-cor-sb", note:"Títulos em caixa-alta nos carrosséis, capas e legendas dos reels."},
+      {role:"Destaque · Cormorant Medium Italic", sample:"pensamento", cls:"t-cor-mi", note:"A palavra-chave em itálico, em ouro e sublinhada, logo abaixo do título."},
+      {role:"Apoio · SF Pro Display Medium", sample:"Não depende só do seu", cls:"t-sf-md", note:"Frases de apoio, legendas e botões como “Aprofunde-se”."},
+      {role:"Apoio · SF Pro Display Bold", sample:"Aprofunde-se", cls:"t-sf-bd", note:"Ênfase nos textos de apoio e chamadas curtas."}],
+    typeNote:"Cormorant vem do Google Fonts. SF Pro Display é a fonte do sistema da Apple: aparece no Mac e no iPhone; em outros aparelhos, a amostra usa uma fonte parecida.",
     logos:[
       {src:"img/clube/logo-vertical-ouro.png", label:"Vertical · fundo claro", bg:"paper"},
       {src:"img/clube/logo-vertical-claro.png", label:"Vertical · fundo escuro", bg:"night"},
