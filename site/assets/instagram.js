@@ -4,13 +4,13 @@
 const box = document.getElementById("ig");
 if (!box) return;
 const BASE = document.documentElement.dataset.base || "";
-const PROFILE = {username:"oclubedos5porcento", name:"Clube dos 5% | Jacob Petry", posts:"603", followers:"64,3 mil"};
-const CAPTURED = "28/09 às 20:56";
+const PROFILE = {username:"oclubedos5porcento", name:"Clube dos 5% | Jacob Petry", posts:"607", followers:"64,3 mil"};
+const CAPTURED = "30/09 às 19:52";
 /* [tipo, link] na ordem da grade (os ícones de reel/fixado já vêm no print); pinned = fixado no perfil */
 const POSTS = [
-  ["reel","reel/DQKlTcZD1oM",true],["carrossel","p/DdohVzFlt9N"],["reel","reel/Dd18_d5q-Dy"],
-  ["carrossel","p/Dd1BNANllNU"],["reel","reel/Ddz0R0wqZ0k"],["carrossel","p/DdwP1Dqlru6"],
-  ["reel","reel/Ddtu64EBquS"],["reel","reel/DdtFITcK11q"],["reel","reel/Ddq35H4K5L0"]];
+  ["reel","reel/DdhfcgvqpuO",true],["reel","reel/DQKlTcZD1oM",true],["carrossel","p/DdohVzFlt9N",true],
+  ["carrossel","p/Dd63Ec0mu_f"],["reel","reel/Dd49MiMqNi_"],["reel","reel/Dd4aSYyKQY1"],
+  ["reel","reel/Dd3fvyGSIZ-"],["reel","reel/Dd18_d5q-Dy"],["carrossel","p/Dd1BNANllNU"]];
 const url = p => `https://www.instagram.com/${PROFILE.username}/${p}/`;
 box.innerHTML = `<div class="ig-card">
   <header class="ig-head">
