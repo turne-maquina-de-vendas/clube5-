@@ -11,7 +11,9 @@ const FORMATS = [
     piece("carrossel-falso-eu", "Como o falso eu é construído?", nums(9)),
     piece("carrossel-banho", "Você já entrou no banho e não lembrava do shampoo?", nums(9)),
     piece("carrossel-leao", "Um filhote de leão se perdeu do bando", nums(11)),
-    piece("carrossel-exercicio", "Tente fazer esses 2 exercícios", nums(9))]},
+    piece("carrossel-exercicio", "Tente fazer esses 2 exercícios", nums(9)),
+    piece("carrossel-necessidade", "A necessidade de validação", nums(3)),
+    piece("carrossel-inseguranca", "A insegurança nas relações", nums(3))]},
   {id:"estaticos", title:"Estáticos", one:"Estático", ratio:"4 / 5", size:"1080 × 1350", items:[]},
   {id:"reels", title:"Capas de reels", one:"Capa de reels", ratio:"9 / 16", size:"1080 × 1920", zip:"dl/reels.zip", items:[
     ["a","É assim que surge a voz na cabeça"],["b","O que é o Clube dos 5%?"],["c","Esse é o ciclo do falso eu"],
