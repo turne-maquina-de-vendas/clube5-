@@ -8,18 +8,18 @@ const nums = n => Array.from({length:n}, (_,i)=>String(i+1));
 
 const FORMATS = [
   {id:"carrosseis", title:"Carrosséis", one:"Carrossel", ratio:"4 / 5", size:"1080 × 1350", items:[
-    piece("carrossel-falso-eu", "Como o falso eu é construído?", nums(9)),
-    piece("carrossel-banho", "Você já entrou no banho e não lembrava do shampoo?", nums(9)),
-    piece("carrossel-leao", "Um filhote de leão se perdeu do bando", nums(11)),
-    piece("carrossel-exercicio", "Tente fazer esses 2 exercícios", nums(9)),
     piece("carrossel-necessidade", "A necessidade de validação", nums(3)),
-    piece("carrossel-inseguranca", "A insegurança nas relações", nums(3))]},
+    piece("carrossel-inseguranca", "A insegurança nas relações", nums(3)),
+    piece("carrossel-exercicio", "Tente fazer esses 2 exercícios", nums(9)),
+    piece("carrossel-leao", "Um filhote de leão se perdeu do bando", nums(11)),
+    piece("carrossel-banho", "Você já entrou no banho e não lembrava do shampoo?", nums(9)),
+    piece("carrossel-falso-eu", "Como o falso eu é construído?", nums(9))]},
   {id:"estaticos", title:"Estáticos", one:"Estático", ratio:"4 / 5", size:"1080 × 1350", items:[]},
   {id:"reels", title:"Capas de reels", one:"Capa de reels", ratio:"9 / 16", size:"1080 × 1920", zip:"dl/reels.zip", items:[
+    ["j","Você acredita ser quem dizem que você é"],["k","2ª aula: a voz na cabeça e o despertar da presença"],["l","Não existe fórmula mágica para mudar a realidade"],
     ["a","É assim que surge a voz na cabeça"],["b","O que é o Clube dos 5%?"],["c","Esse é o ciclo do falso eu"],
     ["d","Você não é a sua história"],["e","1ª aula: a origem do nosso problema central"],["f","O que é a voz na cabeça?"],
-    ["g","Uma decisão que transforma a vida inteira"],["h","É por isso que você sofre"],["i","Quem você é de verdade?"],
-    ["j","Você acredita ser quem dizem que você é"],["k","2ª aula: a voz na cabeça e o despertar da presença"],["l","Não existe fórmula mágica para mudar a realidade"]]
+    ["g","Uma decisão que transforma a vida inteira"],["h","É por isso que você sofre"],["i","Quem você é de verdade?"]]
     .map(([f,title])=>piece("reels", title, [f]))},
 ];
 const IC_DL = `<svg viewBox="0 0 24 24"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>`;
